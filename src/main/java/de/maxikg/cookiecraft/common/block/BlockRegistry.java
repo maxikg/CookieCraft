@@ -42,6 +42,9 @@ public class BlockRegistry<T extends Block & ModBlock> {
         for (T block : ImmutableList.copyOf(blocks)) {
             String internalName = block.getName();
 
+            if (block.getUnlocalizedName() == null)
+                block.setUnlocalizedName(internalName);
+
             GameRegistry.registerBlock(block, internalName);
 
             if (block instanceof Craftable)
