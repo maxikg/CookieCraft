@@ -1,7 +1,10 @@
 package de.maxikg.cookiecraft;
 
 import de.maxikg.cookiecraft.blocks.CookieBlock;
+import de.maxikg.cookiecraft.blocks.CookieOre;
+import de.maxikg.cookiecraft.world.gen.CookieWorldGenerator;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemModelMesher;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -41,11 +44,20 @@ public class CookieCraft {
                 new ItemStack(cookie)
         }, new ItemStack(CookieBlock.INSTANCE)));
 
+        GameRegistry.registerBlock(CookieOre.INSTANCE, "cookie_ore");
+        GameRegistry.registerWorldGenerator(new CookieWorldGenerator(), 2);
+
         if (e.getSide() == Side.CLIENT) {
-            Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(
+            ItemModelMesher mesher = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
+            mesher.register(
                     Item.getItemFromBlock(CookieBlock.INSTANCE),
                     0,
                     new ModelResourceLocation("cookiecraft:cookie_block", "inventory")
+            );
+            mesher.register(
+                    Item.getItemFromBlock(CookieOre.INSTANCE),
+                    0,
+                    new ModelResourceLocation("cookiecraft:cookie_ore", "inventory")
             );
         }
     }
