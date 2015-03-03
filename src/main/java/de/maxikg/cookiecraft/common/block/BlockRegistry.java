@@ -35,8 +35,9 @@ public class BlockRegistry<T extends Block & ModBlock> {
         return this;
     }
 
-    public void registerBlocks(FMLInitializationEvent e) {
+    public int registerBlocks(FMLInitializationEvent e) {
         ItemModelMesher mesher = e.getSide() == Side.CLIENT ? Minecraft.getMinecraft().getRenderItem().getItemModelMesher() : null;
+        int counter = 0;
 
         for (T block : ImmutableList.copyOf(blocks)) {
             String internalName = block.getName();
@@ -46,13 +47,18 @@ public class BlockRegistry<T extends Block & ModBlock> {
             if (block instanceof Craftable)
                 registerRecipes((Craftable) block);
 
-            if (mesher != null)
+            if (mesher != null) {
                 mesher.register(
                         Item.getItemFromBlock(block),
                         0,
                         new ModelResourceLocation(modId + ":" + internalName, "inventory")
                 );
+            }
+
+            counter++;
         }
+
+        return counter;
     }
 
     private void registerRecipes(Craftable craftable) {

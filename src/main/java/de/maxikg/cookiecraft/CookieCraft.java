@@ -8,7 +8,9 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import org.apache.logging.log4j.Logger;
 
 /**
  * @author maxikg <me@maxikg.de>
@@ -24,6 +26,7 @@ public class CookieCraft {
         }
     };
     private final BlockRegistry blockRegistry = new BlockRegistry(CookieCraft.MOD_ID);
+    private Logger logger;
 
     public CookieCraft() {
         blockRegistry
@@ -32,8 +35,13 @@ public class CookieCraft {
     }
 
     @Mod.EventHandler
+    public void preInit(FMLPreInitializationEvent e) {
+        logger = e.getModLog();
+    }
+
+    @Mod.EventHandler
     public void init(FMLInitializationEvent e) {
-        blockRegistry.registerBlocks(e);
+        logger.info("Registered {} blocks.", blockRegistry.registerBlocks(e));
 
         GameRegistry.registerWorldGenerator(new CookieWorldGenerator(), 2);
     }
