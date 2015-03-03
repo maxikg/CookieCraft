@@ -1,2 +1,4 @@
 tile.cookie_block.name=Cookie block
 tile.cookie_ore.name=Cookie ore
+
+itemGroup.cookiecraft=Cookiecraft
