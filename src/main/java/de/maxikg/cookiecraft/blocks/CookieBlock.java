@@ -31,7 +31,7 @@ public class CookieBlock extends Block {
     }
 
     @Override
-    public int quantityDroppedWithBonus(int fortune, Random random) {
+    public int quantityDropped(Random random) {
         return 9;
     }
 }
