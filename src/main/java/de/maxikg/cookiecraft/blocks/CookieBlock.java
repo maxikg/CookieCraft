@@ -55,6 +55,6 @@ public class CookieBlock extends AbstractBlock implements Craftable {
                 new ItemStack(cookie),
                 new ItemStack(cookie),
                 new ItemStack(cookie)
-        }, new ItemStack(CookieBlock.INSTANCE)));
+        }, new ItemStack(this)));
     }
 }
