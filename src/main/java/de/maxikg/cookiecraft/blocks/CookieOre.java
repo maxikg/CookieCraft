@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
 import java.util.Random;
 
@@ -27,6 +28,10 @@ public class CookieOre extends BlockOre implements ModBlock {
     @Override
     public String getName() {
         return "cookie_ore";
+    }
+
+    @Override
+    public void postRegisterBlock(FMLInitializationEvent e) {
     }
 
     @Override

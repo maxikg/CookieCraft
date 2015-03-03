@@ -47,6 +47,8 @@ public class BlockRegistry<T extends Block & ModBlock> {
 
             GameRegistry.registerBlock(block, internalName);
 
+            block.postRegisterBlock(e);
+
             if (block instanceof Craftable)
                 registerRecipes((Craftable) block);
 
