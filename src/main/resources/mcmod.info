@@ -1,0 +1,14 @@
+[{
+  "modid": "cookiecraft",
+  "name": "CookieCraft",
+  "description": "Bring the cookieversum to Minecraft.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["maxikg", "Evi_miAUx3"],
+  "credits": "Evi_miAUx3 for having the idea.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}]
