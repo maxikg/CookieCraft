@@ -2,6 +2,7 @@ package de.maxikg.cookiecraft.common.block;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import de.maxikg.cookiecraft.common.item.Craftable;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemModelMesher;

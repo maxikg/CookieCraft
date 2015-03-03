@@ -1,4 +1,4 @@
-package de.maxikg.cookiecraft.common.block;
+package de.maxikg.cookiecraft.common.item;
 
 import net.minecraft.item.crafting.IRecipe;
 

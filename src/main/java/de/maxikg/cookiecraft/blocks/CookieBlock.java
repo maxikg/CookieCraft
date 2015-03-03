@@ -2,7 +2,7 @@ package de.maxikg.cookiecraft.blocks;
 
 import de.maxikg.cookiecraft.CookieCraft;
 import de.maxikg.cookiecraft.common.block.AbstractBlock;
-import de.maxikg.cookiecraft.common.block.Craftable;
+import de.maxikg.cookiecraft.common.item.Craftable;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
