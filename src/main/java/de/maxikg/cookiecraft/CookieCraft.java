@@ -2,7 +2,7 @@ package de.maxikg.cookiecraft;
 
 import de.maxikg.cookiecraft.blocks.CookieBlock;
 import de.maxikg.cookiecraft.blocks.CookieOre;
-import de.maxikg.cookiecraft.common.BlockRegistry;
+import de.maxikg.cookiecraft.common.block.BlockRegistry;
 import de.maxikg.cookiecraft.world.gen.CookieWorldGenerator;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;

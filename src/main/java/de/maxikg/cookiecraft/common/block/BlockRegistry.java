@@ -1,4 +1,4 @@
-package de.maxikg.cookiecraft.common;
+package de.maxikg.cookiecraft.common.block;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * @author maxikg <me@maxikg.de>
  */
-public class BlockRegistry<T extends Block & CBlock> {
+public class BlockRegistry<T extends Block & ModBlock> {
 
     private final List<T> blocks = Lists.newArrayList();
     private final String modId;

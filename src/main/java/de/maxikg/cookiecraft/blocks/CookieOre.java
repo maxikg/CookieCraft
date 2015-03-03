@@ -1,7 +1,7 @@
 package de.maxikg.cookiecraft.blocks;
 
 import de.maxikg.cookiecraft.CookieCraft;
-import de.maxikg.cookiecraft.common.CBlock;
+import de.maxikg.cookiecraft.common.block.ModBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.state.IBlockState;
@@ -12,7 +12,7 @@ import java.util.Random;
 /**
  * @author maxikg <me@maxikg.de>
  */
-public class CookieOre extends BlockOre implements CBlock {
+public class CookieOre extends BlockOre implements ModBlock {
 
     public static final CookieOre INSTANCE = new CookieOre();
 
