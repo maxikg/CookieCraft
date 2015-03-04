@@ -2,6 +2,7 @@ package de.maxikg.cookiecraft;
 
 import de.maxikg.cookiecraft.blocks.CookieBlock;
 import de.maxikg.cookiecraft.blocks.CookieOre;
+import de.maxikg.cookiecraft.blocks.CookieSpringBlock;
 import de.maxikg.cookiecraft.common.block.BlockRegistry;
 import de.maxikg.cookiecraft.world.gen.CookieWorldGenerator;
 import net.minecraft.creativetab.CreativeTabs;
@@ -31,7 +32,8 @@ public class CookieCraft {
     public CookieCraft() {
         blockRegistry
                 .addBlock(CookieBlock.INSTANCE)
-                .addBlock(CookieOre.INSTANCE);
+                .addBlock(CookieOre.INSTANCE)
+                .addBlock(CookieSpringBlock.INSTANCE);
     }
 
     @Mod.EventHandler
