@@ -1,8 +1,8 @@
 package de.maxikg.cookiecraft.blocks;
 
 import de.maxikg.cookiecraft.CookieCraft;
-import de.maxikg.cookiecraft.common.block.AbstractBlock;
-import de.maxikg.cookiecraft.common.item.Craftable;
+import de.maxikg.cookiecraft.common.model.Craftable;
+import de.maxikg.cookiecraft.common.model.ModdedContent;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -18,17 +18,22 @@ import java.util.Random;
 /**
  * @author maxikg <me@maxikg.de>
  */
-public class CookieBlock extends AbstractBlock implements Craftable {
+public class CookieBlock extends Block implements Craftable, ModdedContent {
 
     public static final CookieBlock INSTANCE = new CookieBlock();
 
     public CookieBlock() {
-        super("cookie_block", Material.rock);
+        super(Material.rock);
 
         setHardness(1.5f);
         setStepSound(Block.soundTypeStone);
         setCreativeTab(CookieCraft.CREATIVE_TAB);
         setHarvestLevel("pickaxe", 3);
+    }
+
+    @Override
+    public String getName() {
+        return "cookie_block";
     }
 
     @Override

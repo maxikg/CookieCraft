@@ -3,15 +3,17 @@ package de.maxikg.cookiecraft;
 import de.maxikg.cookiecraft.blocks.CookieBlock;
 import de.maxikg.cookiecraft.blocks.CookieOre;
 import de.maxikg.cookiecraft.blocks.CookieSpringBlock;
-import de.maxikg.cookiecraft.common.block.BlockRegistry;
+import de.maxikg.cookiecraft.common.registry.ModdingRegistry;
+import de.maxikg.cookiecraft.common.registry.registrator.*;
 import de.maxikg.cookiecraft.world.gen.CookieWorldGenerator;
+import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import org.apache.logging.log4j.Logger;
+import net.minecraftforge.fml.relauncher.Side;
 
 /**
  * @author maxikg <me@maxikg.de>
@@ -26,24 +28,30 @@ public class CookieCraft {
             return Item.getItemById(357);
         }
     };
-    private final BlockRegistry blockRegistry = new BlockRegistry(CookieCraft.MOD_ID);
-    private Logger logger;
+    private final ModdingRegistry registry = new ModdingRegistry();
 
     public CookieCraft() {
-        blockRegistry
-                .addBlock(CookieBlock.INSTANCE)
-                .addBlock(CookieOre.INSTANCE)
-                .addBlock(CookieSpringBlock.INSTANCE);
+        registry.addRegistrator(new BlockRegistrator());
+        registry.addRegistrator(new ItemRegistrator());
+        registry.addRegistrator(new RecipeRegistrator());
+        registry.addRegistrator(new UnlocalizedNameFixerRegistrator());
+
+        registry.addContent(CookieBlock.INSTANCE);
+        registry.addContent(CookieOre.INSTANCE);
+        registry.addContent(CookieSpringBlock.INSTANCE);
     }
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e) {
-        logger = e.getModLog();
+        registry.initLogger(e.getModLog());
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent e) {
-        logger.info("Registered {} blocks.", blockRegistry.registerBlocks(e));
+        if (e.getSide() == Side.CLIENT)
+            registry.addRegistrator(new InventoryMesherRegistrator(Minecraft.getMinecraft().getRenderItem().getItemModelMesher(), MOD_ID));
+
+        registry.doRegistration(e);
 
         GameRegistry.registerWorldGenerator(new CookieWorldGenerator(), 2);
     }

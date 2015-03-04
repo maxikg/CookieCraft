@@ -2,7 +2,8 @@ package de.maxikg.cookiecraft.blocks;
 
 import de.maxikg.cookiecraft.CookieCraft;
 import de.maxikg.cookiecraft.blocks.tileentity.CookieSpringTileEntity;
-import de.maxikg.cookiecraft.common.block.ModBlock;
+import de.maxikg.cookiecraft.common.model.ModdedContent;
+import de.maxikg.cookiecraft.common.model.PostRegistrationListener;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -14,7 +15,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 /**
  * @author maxikg <me@maxikg.de>
  */
-public class CookieSpringBlock extends BlockContainer implements ModBlock {
+public class CookieSpringBlock extends BlockContainer implements ModdedContent, PostRegistrationListener {
 
     public static final CookieSpringBlock INSTANCE = new CookieSpringBlock();
 
@@ -44,7 +45,7 @@ public class CookieSpringBlock extends BlockContainer implements ModBlock {
     }
 
     @Override
-    public void postRegisterBlock(FMLInitializationEvent e) {
+    public void postRegistration(FMLInitializationEvent e) {
         GameRegistry.registerTileEntity(CookieSpringTileEntity.class, "cookie_spring_te");
     }
 
