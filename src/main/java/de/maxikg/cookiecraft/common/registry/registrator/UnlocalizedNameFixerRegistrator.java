@@ -18,7 +18,7 @@ public class UnlocalizedNameFixerRegistrator extends AbstractRegistrator {
             Method setter = clazz.getMethod("setUnlocalizedName", String.class);
             Object result = getter.invoke(content);
 
-            if (result == null || (result instanceof String && ((String) result).equalsIgnoreCase("tile.null"))) {
+            if (result == null || (result instanceof String && ((String) result).endsWith(".null"))) {
                 setter.invoke(content, content.getName());
 
                 return RegistratorResult.ACCEPTED;
