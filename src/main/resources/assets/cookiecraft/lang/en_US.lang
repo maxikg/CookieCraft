@@ -1,4 +1,5 @@
 tile.cookie_block.name=Cookie block
 tile.cookie_ore.name=Cookie ore
+tile.cookie_spring.name=Cookie spring
 
 itemGroup.cookiecraft=Cookiecraft
