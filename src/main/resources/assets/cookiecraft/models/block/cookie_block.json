@@ -1,6 +1,12 @@
 {
-  "parent": "block/cube_all",
+  "parent": "block/cube",
   "textures": {
-    "all": "cookiecraft:blocks/cookie_block"
+    "particle": "cookiecraft:blocks/cookie_block",
+    "down": "cookiecraft:blocks/cookie_block",
+    "up": "cookiecraft:blocks/cookie_block_top",
+    "north": "cookiecraft:blocks/cookie_block",
+    "east": "cookiecraft:blocks/cookie_block",
+    "south": "cookiecraft:blocks/cookie_block",
+    "west": "cookiecraft:blocks/cookie_block"
   }
 }
