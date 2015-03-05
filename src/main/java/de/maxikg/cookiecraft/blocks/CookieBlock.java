@@ -37,7 +37,7 @@ public class CookieBlock extends Block implements Craftable, ModdedContent {
 
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        return Item.getItemById(357);
+        return Items.cookie;
     }
 
     @Override
