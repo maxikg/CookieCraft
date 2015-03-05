@@ -52,6 +52,8 @@ public class ModdingRegistry {
     }
 
     public void doRegistration(FMLInitializationEvent event) {
+        locked = true;
+
         contentLoop:
         for (ModdedContent content : contents) {
             boolean handled = false;
