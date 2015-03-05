@@ -3,6 +3,7 @@ package de.maxikg.cookiecraft;
 import de.maxikg.cookiecraft.blocks.CookieBlock;
 import de.maxikg.cookiecraft.blocks.CookieOreBlock;
 import de.maxikg.cookiecraft.blocks.CookieSpringBlock;
+import de.maxikg.cookiecraft.blocks.MortarBlock;
 import de.maxikg.cookiecraft.common.registry.ModdingRegistry;
 import de.maxikg.cookiecraft.common.registry.registrator.*;
 import de.maxikg.cookiecraft.items.GoldenCookieItem;
@@ -42,6 +43,7 @@ public class CookieCraft {
         registry.addContent(new CookieBlock());
         registry.addContent(new CookieOreBlock());
         registry.addContent(new CookieSpringBlock());
+        registry.addContent(new MortarBlock());
 
         registry.addContent(new GoldenCookieItem());
         registry.addContent(new PestleItem());
