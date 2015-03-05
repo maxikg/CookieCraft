@@ -26,4 +26,9 @@ public class RecipeRegistrator extends AbstractRegistrator {
 
         return result;
     }
+
+    @Override
+    public int getPriority() {
+        return 200;
+    }
 }
