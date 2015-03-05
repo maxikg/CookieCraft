@@ -6,6 +6,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
+import net.minecraft.util.BlockPos;
+import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -24,6 +27,11 @@ public class CookieOreBlock extends BlockOre implements ModdedContent {
     @Override
     public String getName() {
         return "cookie_ore";
+    }
+
+    @Override
+    public int getExpDrop(IBlockAccess world, BlockPos pos, int fortune) {
+        return 1 + (world instanceof World ? ((World) world).rand : new Random()).nextInt(2);
     }
 
     @Override
