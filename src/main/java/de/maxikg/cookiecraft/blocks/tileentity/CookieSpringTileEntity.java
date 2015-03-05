@@ -1,7 +1,7 @@
 package de.maxikg.cookiecraft.blocks.tileentity;
 
 import net.minecraft.entity.item.EntityItem;
-import net.minecraft.item.Item;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.server.gui.IUpdatePlayerListBox;
@@ -16,7 +16,6 @@ public class CookieSpringTileEntity extends TileEntity implements IUpdatePlayerL
 
     private static final int TICKS = 20 * 30;
 
-    private final Item cookie = Item.getItemById(357);
     private int counter = 0;
 
     @Override
@@ -46,7 +45,7 @@ public class CookieSpringTileEntity extends TileEntity implements IUpdatePlayerL
                     pos.getX() + 0.5,
                     pos.getY() + 1,
                     pos.getZ() + 0.5,
-                    new ItemStack(cookie)
+                    new ItemStack(Items.cookie)
             ));
         }
     }

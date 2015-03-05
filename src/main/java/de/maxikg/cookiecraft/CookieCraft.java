@@ -9,6 +9,7 @@ import de.maxikg.cookiecraft.items.GoldenCookieItem;
 import de.maxikg.cookiecraft.world.generator.CookieWorldGenerator;
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -26,7 +27,7 @@ public class CookieCraft {
     public static final CreativeTabs CREATIVE_TAB = new CreativeTabs(CreativeTabs.getNextID(), "cookiecraft") {
         @Override
         public Item getTabIconItem() {
-            return Item.getItemById(357);
+            return Items.cookie;
         }
     };
     private final ModdingRegistry registry = new ModdingRegistry();

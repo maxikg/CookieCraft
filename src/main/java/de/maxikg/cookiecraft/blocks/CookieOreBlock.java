@@ -5,6 +5,7 @@ import de.maxikg.cookiecraft.common.model.ModdedContent;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -37,7 +38,7 @@ public class CookieOreBlock extends BlockOre implements ModdedContent {
 
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        return Item.getItemById(357);
+        return Items.cookie;
     }
 
     @Override

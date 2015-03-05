@@ -6,6 +6,7 @@ import de.maxikg.cookiecraft.common.model.ModdedContent;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
@@ -46,18 +47,16 @@ public class CookieBlock extends Block implements Craftable, ModdedContent {
 
     @Override
     public Collection<IRecipe> getRecipes() {
-        Item cookie = Item.getItemById(357);
-
         return Collections.<IRecipe>singleton(new ShapedRecipes(3, 3, new ItemStack[] {
-                new ItemStack(cookie),
-                new ItemStack(cookie),
-                new ItemStack(cookie),
-                new ItemStack(cookie),
-                new ItemStack(cookie),
-                new ItemStack(cookie),
-                new ItemStack(cookie),
-                new ItemStack(cookie),
-                new ItemStack(cookie)
+                new ItemStack(Items.cookie),
+                new ItemStack(Items.cookie),
+                new ItemStack(Items.cookie),
+                new ItemStack(Items.cookie),
+                new ItemStack(Items.cookie),
+                new ItemStack(Items.cookie),
+                new ItemStack(Items.cookie),
+                new ItemStack(Items.cookie),
+                new ItemStack(Items.cookie)
         }, new ItemStack(this)));
     }
 }

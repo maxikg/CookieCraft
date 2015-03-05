@@ -3,7 +3,7 @@ package de.maxikg.cookiecraft.items;
 import de.maxikg.cookiecraft.CookieCraft;
 import de.maxikg.cookiecraft.common.model.Craftable;
 import de.maxikg.cookiecraft.common.model.ModdedContent;
-import net.minecraft.item.Item;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
@@ -30,18 +30,16 @@ public class GoldenCookieItem extends ItemFood implements ModdedContent, Craftab
 
     @Override
     public Collection<IRecipe> getRecipes() {
-        Item cookie = Item.getItemById(357);
-
         return Collections.<IRecipe>singleton(new ShapedRecipes(3, 3, new ItemStack[] {
-                new ItemStack(cookie),
-                new ItemStack(cookie),
-                new ItemStack(cookie),
-                new ItemStack(cookie),
-                new ItemStack(Item.getItemById(266)),
-                new ItemStack(cookie),
-                new ItemStack(cookie),
-                new ItemStack(cookie),
-                new ItemStack(cookie)
+                new ItemStack(Items.cookie),
+                new ItemStack(Items.cookie),
+                new ItemStack(Items.cookie),
+                new ItemStack(Items.cookie),
+                new ItemStack(Items.gold_ingot),
+                new ItemStack(Items.cookie),
+                new ItemStack(Items.cookie),
+                new ItemStack(Items.cookie),
+                new ItemStack(Items.cookie)
         }, new ItemStack(this)));
     }
 }
