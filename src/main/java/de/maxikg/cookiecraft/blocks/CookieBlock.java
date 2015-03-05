@@ -26,7 +26,7 @@ public class CookieBlock extends Block implements Craftable, ModdedContent {
         setHardness(1.5f);
         setStepSound(Block.soundTypeStone);
         setCreativeTab(CookieCraft.CREATIVE_TAB);
-        setHarvestLevel("pickaxe", 3);
+        setHarvestLevel("pickaxe", 1);
     }
 
     @Override

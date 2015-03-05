@@ -18,10 +18,11 @@ import java.util.Random;
 public class CookieOreBlock extends BlockOre implements ModdedContent {
 
     public CookieOreBlock() {
-        setHardness(1.75f);
+        setHardness(3.0F);
+        setResistance(5.0F);
         setStepSound(Block.soundTypeStone);
         setCreativeTab(CookieCraft.CREATIVE_TAB);
-        setHarvestLevel("pickaxe", 3);
+        setHarvestLevel("pickaxe", 1);
     }
 
     @Override

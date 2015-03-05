@@ -25,7 +25,7 @@ public class CookieSpringBlock extends BlockContainer implements ModdedContent, 
         setHardness(1.3f);
         setStepSound(Block.soundTypeStone);
         setCreativeTab(CookieCraft.CREATIVE_TAB);
-        setHarvestLevel("pickaxe", 3);
+        setHarvestLevel("pickaxe", 1);
     }
 
     public boolean isOpaqueCube() {
