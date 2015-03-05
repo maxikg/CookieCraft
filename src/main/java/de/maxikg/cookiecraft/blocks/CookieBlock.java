@@ -1,5 +1,7 @@
 package de.maxikg.cookiecraft.blocks;
 
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Lists;
 import de.maxikg.cookiecraft.CookieCraft;
 import de.maxikg.cookiecraft.common.model.Craftable;
 import de.maxikg.cookiecraft.common.model.ModdedContent;
@@ -11,9 +13,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.ShapedRecipes;
+import net.minecraft.item.crafting.ShapelessRecipes;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Random;
 
 /**
@@ -47,16 +49,19 @@ public class CookieBlock extends Block implements Craftable, ModdedContent {
 
     @Override
     public Collection<IRecipe> getRecipes() {
-        return Collections.<IRecipe>singleton(new ShapedRecipes(3, 3, new ItemStack[] {
-                new ItemStack(Items.cookie),
-                new ItemStack(Items.cookie),
-                new ItemStack(Items.cookie),
-                new ItemStack(Items.cookie),
-                new ItemStack(Items.cookie),
-                new ItemStack(Items.cookie),
-                new ItemStack(Items.cookie),
-                new ItemStack(Items.cookie),
-                new ItemStack(Items.cookie)
-        }, new ItemStack(this)));
+        return ImmutableSet.of(
+                new ShapedRecipes(3, 3, new ItemStack[]{
+                        new ItemStack(Items.cookie),
+                        new ItemStack(Items.cookie),
+                        new ItemStack(Items.cookie),
+                        new ItemStack(Items.cookie),
+                        new ItemStack(Items.cookie),
+                        new ItemStack(Items.cookie),
+                        new ItemStack(Items.cookie),
+                        new ItemStack(Items.cookie),
+                        new ItemStack(Items.cookie)
+                }, new ItemStack(this)),
+                new ShapelessRecipes(new ItemStack(Items.cookie, 9), Lists.newArrayList(new ItemStack(this)))
+        );
     }
 }
