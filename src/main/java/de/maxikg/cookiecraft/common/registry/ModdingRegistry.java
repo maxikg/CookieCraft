@@ -31,7 +31,8 @@ public class ModdingRegistry {
             throw new UnsupportedOperationException("ModdingRegistry is already locked.");
 
         synchronized (registrators) {
-            registrators.add(Preconditions.checkNotNull(registrator));
+            if (!registrators.add(Preconditions.checkNotNull(registrator)))
+                throw new UnsupportedOperationException("Failed to add " + registrator.getClass().getName() + " registrator.");
         }
 
         return this;
