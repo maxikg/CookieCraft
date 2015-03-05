@@ -3,5 +3,6 @@ tile.cookie_ore.name=Cookie ore
 tile.cookie_spring.name=Cookie spring
 
 item.golden_cookie.name=Golden cookie
+item.pestle.name=Pestle
 
 itemGroup.cookiecraft=Cookiecraft
