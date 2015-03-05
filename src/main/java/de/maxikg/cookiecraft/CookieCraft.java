@@ -5,6 +5,7 @@ import de.maxikg.cookiecraft.blocks.CookieOreBlock;
 import de.maxikg.cookiecraft.blocks.CookieSpringBlock;
 import de.maxikg.cookiecraft.common.registry.ModdingRegistry;
 import de.maxikg.cookiecraft.common.registry.registrator.*;
+import de.maxikg.cookiecraft.items.GoldenCookieItem;
 import de.maxikg.cookiecraft.world.generator.CookieWorldGenerator;
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
@@ -39,6 +40,8 @@ public class CookieCraft {
         registry.addContent(new CookieBlock());
         registry.addContent(new CookieOreBlock());
         registry.addContent(new CookieSpringBlock());
+
+        registry.addContent(new GoldenCookieItem());
     }
 
     @Mod.EventHandler
