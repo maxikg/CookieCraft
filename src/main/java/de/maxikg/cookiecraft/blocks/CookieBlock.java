@@ -20,8 +20,6 @@ import java.util.Random;
  */
 public class CookieBlock extends Block implements Craftable, ModdedContent {
 
-    public static final CookieBlock INSTANCE = new CookieBlock();
-
     public CookieBlock() {
         super(Material.rock);
 

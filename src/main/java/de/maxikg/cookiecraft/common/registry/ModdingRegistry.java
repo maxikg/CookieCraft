@@ -1,10 +1,12 @@
 package de.maxikg.cookiecraft.common.registry;
 
 import com.google.common.base.Preconditions;
-import com.google.common.collect.Lists;
+import com.google.common.collect.ClassToInstanceMap;
+import com.google.common.collect.MutableClassToInstanceMap;
 import com.google.common.collect.Sets;
 import de.maxikg.cookiecraft.common.model.ModdedContent;
 import de.maxikg.cookiecraft.common.model.PostRegistrationListener;
+import de.maxikg.cookiecraft.common.registry.exception.NoSuchModdedContentException;
 import de.maxikg.cookiecraft.common.registry.registrator.Registrator;
 import de.maxikg.cookiecraft.common.registry.registrator.RegistratorResult;
 import de.maxikg.cookiecraft.common.registry.util.RegistratorComparator;
@@ -12,7 +14,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -21,7 +22,7 @@ import java.util.Set;
 public class ModdingRegistry {
 
     private final Set<Registrator> registrators = Sets.newTreeSet(new RegistratorComparator());
-    private final List<ModdedContent> contents = Lists.newArrayList();
+    private final ClassToInstanceMap<ModdedContent> contents = MutableClassToInstanceMap.create();
     private Logger logger = LogManager.getRootLogger();
     private volatile boolean locked = false;
 
@@ -40,8 +41,10 @@ public class ModdingRegistry {
         if (locked)
             throw new UnsupportedOperationException("ModdingRegistry is already locked.");
 
+        Preconditions.checkNotNull(content);
+
         synchronized (contents) {
-            contents.add(Preconditions.checkNotNull(content));
+            contents.put(content.getClass(), content);
         }
 
         return this;
@@ -55,7 +58,7 @@ public class ModdingRegistry {
         locked = true;
 
         contentLoop:
-        for (ModdedContent content : contents) {
+        for (ModdedContent content : contents.values()) {
             boolean handled = false;
 
             for (Registrator registrator : registrators) {
@@ -88,5 +91,16 @@ public class ModdingRegistry {
             if (content instanceof PostRegistrationListener)
                 ((PostRegistrationListener) content).postRegistration(event);
         }
+    }
+
+    public <T extends ModdedContent> T load(Class<T> clazz) {
+        Preconditions.checkNotNull(clazz);
+
+        T instance = contents.getInstance(clazz);
+
+        if (instance == null)
+            throw new NoSuchModdedContentException("No such content: " + clazz.getName());
+
+        return instance;
     }
 }

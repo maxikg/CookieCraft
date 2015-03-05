@@ -1,6 +1,8 @@
 package de.maxikg.cookiecraft.world.gen;
 
+import com.google.common.base.Preconditions;
 import de.maxikg.cookiecraft.blocks.CookieOre;
+import de.maxikg.cookiecraft.common.registry.ModdingRegistry;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -14,6 +16,12 @@ import java.util.Random;
  */
 public class CookieWorldGenerator implements IWorldGenerator {
 
+    private final ModdingRegistry registry;
+
+    public CookieWorldGenerator(ModdingRegistry registry) {
+        this.registry = Preconditions.checkNotNull(registry);
+    }
+
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
         if (world.provider.getDimensionId() == 0)
@@ -21,13 +29,15 @@ public class CookieWorldGenerator implements IWorldGenerator {
     }
 
     private void generate(World world, Random random, int chunkX, int chunkZ) {
+        CookieOre cookieOre = registry.load(CookieOre.class);
+
         for (int i = 0; i < 8; i++) {
             int firstBlockXCoord = chunkX + random.nextInt(16);
             int firstBlockZCoord = chunkZ + random.nextInt(16);
             int y = random.nextInt(60);
             BlockPos pos = new BlockPos(firstBlockXCoord, y, firstBlockZCoord);
 
-            new WorldGenMinable(CookieOre.INSTANCE.getDefaultState(), 14).generate(world, random, pos);
+            new WorldGenMinable(cookieOre.getDefaultState(), 14).generate(world, random, pos);
         }
     }
 }

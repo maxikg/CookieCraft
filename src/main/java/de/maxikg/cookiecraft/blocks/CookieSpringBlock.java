@@ -17,8 +17,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  */
 public class CookieSpringBlock extends BlockContainer implements ModdedContent, PostRegistrationListener {
 
-    public static final CookieSpringBlock INSTANCE = new CookieSpringBlock();
-
     public CookieSpringBlock() {
         super(Material.rock);
 

@@ -36,9 +36,9 @@ public class CookieCraft {
         registry.addRegistrator(new RecipeRegistrator());
         registry.addRegistrator(new UnlocalizedNameFixerRegistrator());
 
-        registry.addContent(CookieBlock.INSTANCE);
-        registry.addContent(CookieOre.INSTANCE);
-        registry.addContent(CookieSpringBlock.INSTANCE);
+        registry.addContent(new CookieBlock());
+        registry.addContent(new CookieOre());
+        registry.addContent(new CookieSpringBlock());
     }
 
     @Mod.EventHandler
@@ -53,6 +53,6 @@ public class CookieCraft {
 
         registry.doRegistration(e);
 
-        GameRegistry.registerWorldGenerator(new CookieWorldGenerator(), 2);
+        GameRegistry.registerWorldGenerator(new CookieWorldGenerator(registry), 2);
     }
 }

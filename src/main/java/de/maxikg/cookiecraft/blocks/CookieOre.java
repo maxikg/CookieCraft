@@ -14,8 +14,6 @@ import java.util.Random;
  */
 public class CookieOre extends BlockOre implements ModdedContent {
 
-    public static final CookieOre INSTANCE = new CookieOre();
-
     public CookieOre() {
         setHardness(1.75f);
         setStepSound(Block.soundTypeStone);
