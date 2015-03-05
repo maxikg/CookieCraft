@@ -5,7 +5,7 @@ import de.maxikg.cookiecraft.blocks.CookieOre;
 import de.maxikg.cookiecraft.blocks.CookieSpringBlock;
 import de.maxikg.cookiecraft.common.registry.ModdingRegistry;
 import de.maxikg.cookiecraft.common.registry.registrator.*;
-import de.maxikg.cookiecraft.world.gen.CookieWorldGenerator;
+import de.maxikg.cookiecraft.world.generator.CookieWorldGenerator;
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;

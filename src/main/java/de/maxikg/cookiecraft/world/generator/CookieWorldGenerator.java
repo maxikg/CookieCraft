@@ -1,4 +1,4 @@
-package de.maxikg.cookiecraft.world.gen;
+package de.maxikg.cookiecraft.world.generator;
 
 import com.google.common.base.Preconditions;
 import de.maxikg.cookiecraft.blocks.CookieOre;
