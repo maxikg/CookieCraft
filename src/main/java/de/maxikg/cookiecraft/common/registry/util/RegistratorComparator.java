@@ -11,6 +11,8 @@ public class RegistratorComparator implements Comparator<Registrator> {
 
     @Override
     public int compare(Registrator o1, Registrator o2) {
-        return o1.getPriority() - o2.getPriority();
+        int difference = o1.getPriority() - o2.getPriority();
+
+        return difference != 0 ? difference : -1;
     }
 }
