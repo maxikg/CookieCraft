@@ -12,9 +12,9 @@ import java.util.Random;
 /**
  * @author maxikg <me@maxikg.de>
  */
-public class CookieOre extends BlockOre implements ModdedContent {
+public class CookieOreBlock extends BlockOre implements ModdedContent {
 
-    public CookieOre() {
+    public CookieOreBlock() {
         setHardness(1.75f);
         setStepSound(Block.soundTypeStone);
         setCreativeTab(CookieCraft.CREATIVE_TAB);

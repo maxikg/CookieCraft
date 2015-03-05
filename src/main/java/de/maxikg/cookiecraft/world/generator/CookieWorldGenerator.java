@@ -1,7 +1,7 @@
 package de.maxikg.cookiecraft.world.generator;
 
 import com.google.common.base.Preconditions;
-import de.maxikg.cookiecraft.blocks.CookieOre;
+import de.maxikg.cookiecraft.blocks.CookieOreBlock;
 import de.maxikg.cookiecraft.common.registry.ModdingRegistry;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
@@ -29,7 +29,7 @@ public class CookieWorldGenerator implements IWorldGenerator {
     }
 
     private void generate(World world, Random random, int chunkX, int chunkZ) {
-        CookieOre cookieOre = registry.load(CookieOre.class);
+        CookieOreBlock cookieOre = registry.load(CookieOreBlock.class);
 
         for (int i = 0; i < 8; i++) {
             int firstBlockXCoord = chunkX + random.nextInt(16);

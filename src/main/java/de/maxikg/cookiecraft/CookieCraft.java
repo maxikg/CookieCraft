@@ -1,7 +1,7 @@
 package de.maxikg.cookiecraft;
 
 import de.maxikg.cookiecraft.blocks.CookieBlock;
-import de.maxikg.cookiecraft.blocks.CookieOre;
+import de.maxikg.cookiecraft.blocks.CookieOreBlock;
 import de.maxikg.cookiecraft.blocks.CookieSpringBlock;
 import de.maxikg.cookiecraft.common.registry.ModdingRegistry;
 import de.maxikg.cookiecraft.common.registry.registrator.*;
@@ -37,7 +37,7 @@ public class CookieCraft {
         registry.addRegistrator(new UnlocalizedNameFixerRegistrator());
 
         registry.addContent(new CookieBlock());
-        registry.addContent(new CookieOre());
+        registry.addContent(new CookieOreBlock());
         registry.addContent(new CookieSpringBlock());
     }
 
