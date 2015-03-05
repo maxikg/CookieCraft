@@ -7,5 +7,5 @@ public enum RegistratorResult {
 
     ACCEPTED,
     SKIPPED,
-    UNSUPPORTED;
+    UNSUPPORTED
 }
