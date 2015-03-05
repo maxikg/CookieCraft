@@ -40,4 +40,9 @@ public class InventoryMesherRegistrator extends AbstractRegistrator {
 
         return RegistratorResult.ACCEPTED;
     }
+
+    @Override
+    public int getPriority() {
+        return 150;
+    }
 }
