@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "pestle=false": {
+            "model": "cookiecraft:mortar"
+        },
+        "pestle=true": {
+            "model": "cookiecraft:mortar"
+        }
+    }
+}
